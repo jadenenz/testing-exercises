@@ -1,9 +1,17 @@
 function analyzeArray(array){
-    const results = {
+    const functions = {
         avg: (array) => array.reduce((a, b) => a + b) / array.length,
-        min: (array) => Math.min.apply(Math, array)
+        min: (array) => Math.min.apply(Math, array),
+        max: (array) => Math.max.apply(Math, array),
+        length: (array) => array.length,
     }
-    return results.avg(array);
+    const results = {
+        avg: functions.avg(array),
+        min: functions.min(array),
+        max: functions.max(array),
+        length: functions.length(array),
+    }
+    return results;
 }
 module.exports = analyzeArray;
 
